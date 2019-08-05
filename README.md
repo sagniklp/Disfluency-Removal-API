@@ -1,5 +1,5 @@
 # Disfluency Removal API
-Disfluency Detection, Removal and Correction following the paper:
+Disfluency Detection, Removal and Correction:
 **[Increase Apparent Public Speaking Fluency By Speech Augmentation](https://arxiv.org/abs/1812.03415)** 
 * **To run:**
     - `python audio_receiver_remover.py 7777`
@@ -35,5 +35,4 @@ If you use our tool please consider citing our paper:
 }
 ```
 ### Contact
-If you have any questions with the code please open an issue. Thanks.
-Sagnik Das- sadas@cs.stonybrook.edu
+If you have any questions with the code please open an issue.
