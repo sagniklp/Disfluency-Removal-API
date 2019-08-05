@@ -1,0 +1,96 @@
+/* fonts */
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro: 400, 300);
+
+:root {
+  --color: #11f930;
+}
+
+#console {
+  background: #222;
+  color: white;
+  font-family: 'Source Code Pro', 'Inconsolata', monospace;
+  height: 20vh;
+}
+
+
+#container {
+  position: relative;
+  display: inline-block;
+  margin-top: 3em;
+  width: 90vw;
+  max-width: 90vw;
+  float: right;
+}
+
+#text {
+  display: inline-block;
+  margin: .8em 0;
+}
+
+.cursor {
+  display: inline-block;
+  height: 1.2em;
+  width: .5em;
+  background: var(--color); 
+  margin-top: .3em;
+  margin-left: -.5em;
+}
+
+.prompt {
+  color: var(--color);
+}
+
+.hide {
+  display: none;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 20px;}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 10px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;}
+
+input:checked + .slider {
+  background-color: #2196F3;}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);}
+
+region.wavesurfer-region:before {
+    content: attr(data-region-label);}
+
+region.wavesurfer-region[data-region-highlight] {
+  border: 1px solid rgb(86, 180, 239);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgba(82, 168, 236, 0.6);}

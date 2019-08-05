@@ -1,0 +1,746 @@
+/*
+ * Start Bootstrap - Scrolling Nav HTML Template (https://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+@import url("https://fonts.googleapis.com/css?family=Teko");
+body {
+  width: 100%;
+  height: 100%;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 767px) {
+  .navbar {
+    padding: 20px 0;
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+  .top-nav-collapse {
+    padding: 0;
+  }
+}
+
+.to-center { margin: auto; max-width: 320px;}
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
+.outer-f{
+  height: 100%;
+  position:relative;
+  background: #fff;
+}
+.outer-e{
+  height: 100%;
+  position:relative;
+  background: #eee;
+}
+.intro-section {
+  position: absolute;
+  /*top: 30%;*/
+  /*width: 100%;*/
+  /*padding-top: 27%;*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #fff;
+}
+.about-section {
+  position: absolute;
+  /*width: 100%;*/
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*padding-top: 80px;*/
+  text-align: center;
+  background: #eee;
+}
+/*.services-section {
+  height: 100%;
+  padding-top: 150px;
+  text-align: center;
+  background: #fff;
+}*/
+
+.vis-section {
+  position: absolute;
+  width: 100%;
+  /*height: 100%;*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*padding-top: 150px;*/
+  text-align: center;
+  background: #fff;
+}
+.contact-section {
+  position: absolute;
+  /*width: 100%;*/
+  /*height: 100%;*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*padding-top: 150px;*/
+  text-align: center;
+  background: #eee;
+}
+.file-input{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.btnfile{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal 14px sans-serif !important;
+}
+
+:root {
+  --color_1: #FAFAFA;
+}
+
+canvas {
+  display: inline-block;
+  background: var(--color_1);
+  width: 100%;
+  height: 190px;
+}
+
+.panels {
+  overflow: hidden;
+  height: 200px;
+  background: var(--color_1);
+}
+
+.glyphicon-record {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: bgRecordingActive;
+          animation-name: bgRecordingActive;
+}
+@-webkit-keyframes bgRecordingActive {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes bgRecordingActive {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.btn-animate {
+  text-decoration: none;
+  font-family: "Teko", sans-serif;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 110px;
+  height: 50px;
+  overflow: hidden;
+}
+.btn-animate > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 50px;
+  stroke-width: 2px;
+  stroke: #e53935;
+  stroke-linecap: round;
+  fill: transparent;
+}
+.btn-animate > span {
+  color: #e53935;
+  width: 110px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  font-size: 23px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 2.3;
+  transition: all 0.2s ease;
+}
+.btn-animate > span:after {
+  position: absolute;
+  content: "REC";
+  color: #e53935 !important;
+  top: 0;
+  left: -100%;
+  width: 110px;
+  height: 50px;
+  color: #0f0f0f;
+  transition: all 0.2s ease;
+}
+.btn-animate > span:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  z-index: 0;
+  width: 50px;
+  background-color: #e53935;
+  border-radius: 50%;
+  top: 0;
+  left: -63%;
+  transition: all 0.4s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+.btn-animate:hover > svg {
+  -webkit-animation: 1s pencil linear forwards;
+          animation: 1s pencil linear forwards;
+}
+.btn-animate:hover > span {
+  left: 100%;
+}
+.btn-animate:hover > span:after {
+  left: -100%;
+}
+
+.btn-animate2 {
+  text-decoration: none;
+  font-family: "Teko", sans-serif;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 110px;
+  height: 50px;
+  overflow: hidden;
+}
+.btn-animate2 > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 50px;
+  stroke-width: 2px;
+  stroke: #e53935;
+  stroke-linecap: round;
+  fill: transparent;
+}
+.btn-animate2 > span {
+  color: #e53935;
+  width: 110px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  font-size: 23px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 2.3;
+  transition: all 0.2s ease;
+}
+.btn-animate2 > span:after {
+  position: absolute;
+  content: "STOP";
+  color: #e53935 !important;
+  font-size: 23px;
+  top: 0;
+  left: -100%;
+  width: 110px;
+  height: 50px;
+  color: #0f0f0f;
+  transition: all 0.2s ease;
+}
+.btn-animate2 > span:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  z-index: 0;
+  width: 50px;
+  background-color: #e53935;
+  border-radius: 50%;
+  top: 0;
+  left: -63%;
+  transition: all 0.4s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+.btn-animate2:hover > svg {
+  -webkit-animation: 1s pencil linear forwards;
+          animation: 1s pencil linear forwards;
+}
+.btn-animate2:hover > span {
+  left: 100%;
+}
+.btn-animate2:hover > span:after {
+  left: -100%;
+}
+
+.btn-pause {
+  text-decoration: none;
+  font-family: "Teko", sans-serif;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 110px;
+  height: 50px;
+  overflow: hidden;
+}
+.btn-pause > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 50px;
+  stroke-width: 2px;
+  stroke: #448aff;
+  stroke-linecap: round;
+  fill: transparent;
+}
+.btn-pause > span {
+  color: #448aff;
+  width: 110px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 2;
+  transition: all 0.2s ease;
+}
+.btn-pause > span:after {
+  position: absolute;
+  content: "PAUSE";
+  color: #448aff !important;
+  top: 0;
+  left: -100%;
+  font-size: 23px;
+  position: absolute;
+  line-height: 2.3;
+  width: 110px;
+  height: 50px;
+  color: #0f0f0f;
+  transition: all 0.2s ease;
+}
+.btn-pause > span:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  z-index: 0;
+  width: 50px;
+  background-color: #0f0f0f;
+  border-radius: 50%;
+  top: 0;
+  left: -63%;
+  transition: all 0.4s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+.btn-pause:hover > svg {
+  -webkit-animation: 1s pencil2 linear forwards;
+          animation: 1s pencil2 linear forwards;
+}
+.btn-pause:hover > span {
+  left: 100%;
+}
+.btn-pause:hover > span:after {
+  left: -100%;
+}
+
+.btn-play {
+  text-decoration: none;
+  font-family: "Teko", sans-serif;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 110px;
+  height: 50px;
+  overflow: hidden;
+}
+.btn-play > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 50px;
+  stroke-width: 2px;
+  stroke: #448aff;
+  stroke-linecap: round;
+  fill: transparent;
+}
+.btn-play > span {
+  color: #448aff;
+  width: 110px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 2;
+  transition: all 0.2s ease;
+}
+.btn-play > span:after {
+  position: absolute;
+  content: "PLAY";
+  color: #448aff !important;
+  top: 0;
+  left: -100%;
+  font-size: 23px;
+  position: absolute;
+  line-height: 2.3;
+  width: 110px;
+  height: 50px;
+  color: #0f0f0f;
+  transition: all 0.2s ease;
+}
+.btn-play > span:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  z-index: 0;
+  width: 50px;
+  background-color: #0f0f0f;
+  border-radius: 50%;
+  top: 0;
+  left: -63%;
+  transition: all 0.4s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+.btn-play:hover > svg {
+  -webkit-animation: 1s pencil2 linear forwards;
+          animation: 1s pencil2 linear forwards;
+}
+.btn-play:hover > span {
+  left: 100%;
+}
+.btn-play:hover > span:after {
+  left: -100%;
+}
+
+.btn-download {
+  text-decoration: none;
+  font-family: "Teko", sans-serif;
+  background-color: #fff;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 110px;
+  height: 50px;
+  overflow: hidden;
+}
+.btn-download > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 50px;
+  stroke-width: 2px;
+  stroke: #4caf50;
+  stroke-linecap: round;
+  fill: transparent;
+}
+.btn-download > span {
+  color: #4caf50;
+  width: 110px;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 2;
+  transition: all 0.2s ease;
+}
+.btn-download > span:after {
+  position: absolute;
+  font-size: 23px;
+  content: "UPLOAD";
+  color: #4caf50 !important;
+  top: 0;
+  position: absolute;
+  line-height: 2.3;
+  left: -100%;
+  width: 110px;
+  height: 50px;
+  color: #0f0f0f;
+  transition: all 0.2s ease;
+}
+.btn-download > span:before {
+  position: absolute;
+  content: "";
+  height: 50px;
+  z-index: 0;
+  width: 50px;
+  background-color: #0f0f0f;
+  border-radius: 50%;
+  top: 0;
+  left: -63%;
+  transition: all 0.4s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+}
+.btn-download:hover > svg {
+  -webkit-animation: 1s pencil3 linear forwards;
+          animation: 1s pencil3 linear forwards;
+}
+.btn-download:hover > span {
+  left: 100%;
+}
+.btn-download:hover > span:after {
+  left: -100%;
+}
+
+.ripple-effect {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e53935;
+  -webkit-animation: ripple-animation 2.5s;
+          animation: ripple-animation 2.5s;
+}
+
+@-webkit-keyframes pencil {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #ffebee;
+  }
+}
+
+@keyframes pencil {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #ffebee;
+  }
+}
+@-webkit-keyframes ripple-animation {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+    opacity: 0;
+  }
+}
+@keyframes ripple-animation {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+    opacity: 0;
+  }
+}
+.ripple2-effect {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #2962ff;
+  -webkit-animation: ripple2-animation 2.5s;
+          animation: ripple2-animation 2.5s;
+}
+
+@-webkit-keyframes pencil2 {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #e3f2fd;
+  }
+}
+
+@keyframes pencil2 {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #e3f2fd;
+  }
+}
+@-webkit-keyframes ripple2-animation {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+    opacity: 0;
+  }
+}
+@keyframes ripple2-animation {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+    opacity: 0;
+  }
+}
+.ripple3-effect {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #4caf50;
+  -webkit-animation: ripple3-animation 2.5s;
+          animation: ripple3-animation 2.5s;
+}
+
+@-webkit-keyframes pencil3 {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #e8f5e9;
+  }
+}
+
+@keyframes pencil3 {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #e8f5e9;
+  }
+}
+@-webkit-keyframes ripple3-animation {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+    opacity: 0;
+  }
+}
+@keyframes ripple3-animation {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+    opacity: 0;
+  }
+}
+
+

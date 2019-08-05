@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+  
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Hi! Lab Disfluency Detection</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/vis.css">
+
+</head>
+
+<body  id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand page-scroll" href="page-top">Hi! Lab Public Speaking Project</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="disf">Visualize Disfluencies</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="contact">Help</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <div class="outer-f">
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Hi,</h1> 
+         <p style="font-size:20px;"> This tool was developed in accordance with the research paper titled- "<a href="https://arxiv.org/abs/1812.03415">Increase Apparent Public Speaking Fluency By Speech Augmentation</a>" </p></br>
+         <a class="btn btn-default page-scroll" style="font-size:15px;" href="contact">Know more!</a> &nbsp
+						 
+                    <a class="btn btn-default page-scroll" style="font-size:15px;" href="disf">Use our tool!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="outer-f">
+    <!-- Contact Section -->
+    <section id="disf" class="vis-section">
+        <div class="container-fluid">
+            <p>Either choose from following samples or upload a speech recording. Make sure to record with minimal background noise for best results. </br>Wait for a while for the audio to get processed after uploading!</p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div>
+                            <div class="col-xs-4"></div>
+                            <div class="col-sm-1">
+                                <button class="btn btn-default" id="sample-1" onclick="loadsample1()" title="Sample 1">Sample 1</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="btn btn-default" id="sample-2" onclick="loadsample2()" title="Sample 2">Sample 2</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="btn btn-default" id="sample-3" onclick="loadsample3()" title="Sample 3">Sample 3</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="btn btn-default" id="sample-4" onclick="loadsample4()" title="Sample 4">Sample 4</button>
+                            </div>
+                            <div class="col-xs-4"></div>
+
+                        </div> 
+                    </div>
+                    </br>
+                    <div id="wave-timeline"></div>
+                    <div id="waveform"></div>
+                    </br>
+                    <div class="row" style="text-align: center">
+                        <div class="col-xs-3"></div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-default" data-action="play" title="Play/Pause"> 
+                                <span id="play">
+                                Play
+                                </span>
+                                <span id="pause" style="display:none">
+                                Pause
+                                </span>
+                            </button>
+                        <!-- </div> -->
+                        <!-- <div class="col-xs-1"> -->
+                            <button class="btn btn-default" onclick=wavesurfer.clearRegions() title="Clear regions">
+                                Clear
+                            </button>
+                        <!-- </div> -->
+                        <!-- <button class="btn btn-default" data-action="export" title="Export annotations to JSON">
+                            Export
+                        </button> -->
+                        <!-- <div class="col-xs-3"> -->
+                            <input type="file" id="uploadTrack" class="file-input" onfocus="this.value=''" onclick=wavesurfer.clearRegions() title="Upload a file"></input>
+                            <button class="btn btn-default" style="padding: 4.5px; width:200px">
+                                <label id="file-label" style="width:200px" class="btnfile" for="uploadTrack" >Choose a file</label>
+                            </button>
+                        <!-- </div> -->
+                        <!-- <div class="col-xs-1"> -->
+                            <button class="btn btn-default" onclick="upload_file()" title="Upload Track" >Upload</button> 
+                        </div>
+                        <div class="col-xs-3"></div>
+                    </div>
+                    </br>
+                    <div id="waveform2"></div>
+                    <div>
+                    </br>
+                        <button class="btn btn-default" data-action="play2" title="Play/Pause"> 
+                            <span id="play2">
+                                Play
+                            </span>
+                            <span id="pause2" style="display:none">
+                                Pause
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+<div class="outer-e">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Contact</h1>
+                    <p style="font-size: large; width:600px; position: relative; left: 50%; transform: translate(-50%, 0%);">If you have any questions about the tool, please feel free to contact- </p>
+                        <p style="font-size: large;">Sagnik Das <a href="mailto:sadas@cs.stonybrook.edu">[email]</a></br>
+                        </br>
+                        </br>
+                        </br>
+						 <a href="http://hi.cs.stonybrook.edu/">&copy; Hi! Lab</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+	
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js'></script>
+<script src='https://cdn.rawgit.com/katspaugh/wavesurfer.js/v1.0.46/dist/wavesurfer.min.js'></script>
+<script src='js/angularAudioRecorder.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script src="js/scrolling-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/plugin/wavesurfer.regions.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/plugin/wavesurfer.timeline.min.js"></script>
+
+<script  src="js/index.js"></script>
+<script  src="js/vis.js"></script>
+
+
+
+
+</body>
+
+</html>
