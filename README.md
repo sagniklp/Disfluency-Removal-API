@@ -12,7 +12,7 @@ Disfluency Detection, Removal and Correction:
 * **Required Packages:**
     - web.py
     - librosa
-    - tensorflow-gpu (>=1.5)
+    - tensorflow-gpu (>=1.5,<2)
     - pydub
     - pyAudioAnalysis
     - soundfile
@@ -20,7 +20,8 @@ Disfluency Detection, Removal and Correction:
     - scipy
     - numpy
     - sklearn
-    - pickle
+    - matplotlib
+    - hmmlearn
 
 ### Citation
 If you use our tool please consider citing our paper:
